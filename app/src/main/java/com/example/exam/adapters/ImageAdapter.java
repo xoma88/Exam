@@ -23,7 +23,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     List<Image> images;
     int fragment;
 
-
     public ImageAdapter (Context context, List<Image> images, int fragment){
         this.inflater = LayoutInflater.from(context);
         this.images = images;

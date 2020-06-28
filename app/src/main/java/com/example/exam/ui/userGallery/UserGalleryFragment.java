@@ -39,16 +39,14 @@ public class UserGalleryFragment extends Fragment {
         rvUserGallery = root.findViewById(R.id.rvUserGallery);
 
         userGalleryViewModel.setUserId(userId);
-        userGalleryViewModel.getImages().observe(getViewLifecycleOwner(), new Observer<List<Image>>() {
+        userGalleryViewModel.getImages(inflater.getContext()).observe(getViewLifecycleOwner(), new Observer<List<Image>>() {
             @Override
             public void onChanged(List<Image> images) {
                 ImageAdapter imageAdapter = new ImageAdapter(getContext(), images, 2);
                 rvUserGallery.setLayoutManager(new GridLayoutManager(getContext(),3));
                 rvUserGallery.setAdapter(imageAdapter);
-
             }
         });
-
 
         return root;
     }
